@@ -6,9 +6,35 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-.column {
-  width: 100%;
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.logo{
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border: 5px solid black;
+  border-radius: 20%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ^^ this is wrong... or it's below as well with "column"... ~8:25pm. check his code. [I THINK I FIXED IT] */
+
+/* h1{
+  display:inline
+  background-colour: white;
+} */
+
+/* .column {
+  width: 100%;
+} */
 /* Style for screens 600px wide and larger */
 /* @media screen and (min-width: 600px) { */
 /* ^^ OR vv */
@@ -16,15 +42,35 @@ body {
   body {
     background-color: palegreen;
   }
-  .column {
-    float: left;
-    width: 33.33%;
+
+  header {
+    flex-direction: row;
+    justify-content: space-around;
+    /* don't need to say display flex again down here bc i said it in header above */
   }
 
+  main {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+
+  .main_pa {
+    padding-left: 1rem;
+  }
+
+  /* .column {
+    float: left;
+    width: 33.33%;
+  } */
+
   /* Clear floats after the columns */
-  .row:after {
+  /* .row:after {
     content: "";
     display: table;
     clear: both;
-  }
+  } */
+
+  /* use flexbox instead to avoid overlaps ^^^ */
+
 }
